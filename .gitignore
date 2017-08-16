@@ -38,4 +38,4 @@ config.test.json
 .idea.*
 .cr/
 uploads/
-appsettings.Development.json
+appsettings.*.json

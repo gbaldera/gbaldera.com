@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GBaldera.Data.Ef", "src\GBa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GBaldera.Data.Ef.Services", "src\GBaldera.Data.Ef.Services\GBaldera.Data.Ef.Services.csproj", "{9EC3FD25-31C4-40A4-B23D-9B5D2ABD75CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GBaldera.Data.Ef.Migrations.Sqlite", "src\GBaldera.Data.Ef.Migrations.Sqlite\GBaldera.Data.Ef.Migrations.Sqlite.csproj", "{FA4515FE-6436-4A48-80D6-747EF974EC42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9EC3FD25-31C4-40A4-B23D-9B5D2ABD75CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EC3FD25-31C4-40A4-B23D-9B5D2ABD75CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EC3FD25-31C4-40A4-B23D-9B5D2ABD75CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA4515FE-6436-4A48-80D6-747EF974EC42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA4515FE-6436-4A48-80D6-747EF974EC42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA4515FE-6436-4A48-80D6-747EF974EC42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA4515FE-6436-4A48-80D6-747EF974EC42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
