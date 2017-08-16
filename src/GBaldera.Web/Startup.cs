@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using GBaldera.Data.Ef;
 using GBaldera.Data.Abstractions;
 using GBaldera.Web.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -25,8 +20,8 @@ namespace GBaldera.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<StorageContext>(options => 
-            options.UseProviderFromConfig(Configuration));
+            services.AddDbContext<StorageContext>(options =>
+                options.UseProviderFromConfig(Configuration));
             services.AddMvc();
             services.AddScoped<IDatabaseMigrator, DatabaseMigrator>();            
         }
