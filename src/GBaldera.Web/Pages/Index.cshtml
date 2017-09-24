@@ -4,6 +4,10 @@
     ViewData["Title"] = "Software Developer";
 }
 
+@section Scripts{
+	<recaptcha-script jquery-validation="false"/>
+}
+
 	<!-- +++++ Welcome Section +++++ -->
 	<div class="ww" id="about">
 	<div class="container">
@@ -77,6 +81,8 @@
 			        </div>
 			        <textarea class="form-control" asp-for="Contact.Message" placeholder="Message" rows="6"></textarea>
 			        <br>
+					<recaptcha/>
+					<br>
 			        <button type="submit" class="btn btn-info">SEND</button>
 			    </form>    			
 			</div>

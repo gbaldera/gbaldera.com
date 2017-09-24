@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PaulMiami.AspNetCore.Mvc.Recaptcha;
 
 namespace GBaldera.Web
 {
@@ -17,16 +18,20 @@ namespace GBaldera.Web
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddRecaptcha(new RecaptchaOptions
+            {
+                SiteKey = Configuration["Recaptcha:SiteKey"],
+                SecretKey = Configuration["Recaptcha:SecretKey"]
+            }); 
+
             services.AddDbContext<StorageContext>(options =>
                 options.UseProviderFromConfig(Configuration));
-            services.AddMvc();
-            services.AddScoped<IDatabaseMigrator, DatabaseMigrator>();            
+            services.AddScoped<IDatabaseMigrator, DatabaseMigrator>();
+            services.AddMvc();  
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())

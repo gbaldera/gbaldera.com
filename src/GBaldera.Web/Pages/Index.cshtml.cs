@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using GBaldera.Web.Models;
+using PaulMiami.AspNetCore.Mvc.Recaptcha;
 
 namespace GBaldera.Web.Pages
 {
@@ -18,6 +19,7 @@ namespace GBaldera.Web.Pages
 
         }
 
+        [ValidateRecaptcha]
         public void OnPost()
         {
             if(ModelState.IsValid)
