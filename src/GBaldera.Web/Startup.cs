@@ -1,6 +1,7 @@
 using GBaldera.Data.Ef;
 using GBaldera.Data.Abstractions;
 using GBaldera.Web.Extensions;
+using GBaldera.Web.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,16 +21,18 @@ namespace GBaldera.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<StorageContext>(options =>
+                options.UseProviderFromConfig(Configuration));
+            services.AddScoped<IDatabaseMigrator, DatabaseMigrator>();
+            services.AddMvc();
+
             services.AddRecaptcha(new RecaptchaOptions
             {
                 SiteKey = Configuration["Recaptcha:SiteKey"],
                 SecretKey = Configuration["Recaptcha:SecretKey"]
-            }); 
+            });
 
-            services.AddDbContext<StorageContext>(options =>
-                options.UseProviderFromConfig(Configuration));
-            services.AddScoped<IDatabaseMigrator, DatabaseMigrator>();
-            services.AddMvc();  
+            services.AddSingleton<IEmailSender, MailgunSender>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

@@ -1,5 +1,6 @@
 ﻿@page
 @model IndexModel
+@using GBaldera.Web.Pages
 @{
     ViewData["Title"] = "Software Developer";
 }
@@ -68,18 +69,18 @@
 			    <form role="form" method="post">
 			        <div asp-validation-summary="All"></div>
 			        <div class="form-group">
-			            <input class="form-control" asp-for="Contact.Name" placeholder="Your Name">
+			            <input class="form-control" asp-for="Contact.Name" placeholder="Your Name" required>
 			            <br>
 			        </div>
 			        <div class="form-group">
-			            <input class="form-control" asp-for="Contact.Email" placeholder="Enter email">
+			            <input class="form-control" asp-for="Contact.Email" placeholder="Enter email" required>
 			            <br>
 			        </div>
 			        <div class="form-group">
 			            <input class="form-control" asp-for="Contact.Website" placeholder="Website">
 			            <br>
 			        </div>
-			        <textarea class="form-control" asp-for="Contact.Message" placeholder="Message" rows="6"></textarea>
+			        <textarea class="form-control" asp-for="Contact.Message" placeholder="Message" rows="6" required></textarea>
 			        <br>
 					<recaptcha/>
 					<br>

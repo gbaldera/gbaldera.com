@@ -1,9 +1,10 @@
 using System.Threading.Tasks;
+using GBaldera.Web.Models;
 
 namespace GBaldera.Web.Services
 {
     public interface IEmailSender
     {
-        Task SendEmail(string to, string subject, string message);
+        Task SendEmail(MailAddress from, MailAddress to, string subject, string message);
     }
 }
