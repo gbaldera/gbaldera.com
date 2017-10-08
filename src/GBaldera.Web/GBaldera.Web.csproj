@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\GBaldera.Data.Ef\GBaldera.Data.Ef.csproj" />
     <ProjectReference Include="..\GBaldera.Data.Ef.Migrations.Sqlite\GBaldera.Data.Ef.Migrations.Sqlite.csproj" />
+    <ProjectReference Include="..\GBaldera.Data.Ef.Migrations.MySql\GBaldera.Data.Ef.Migrations.MySql.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="**/*.json" CopyToPublishDirectory="Never" />

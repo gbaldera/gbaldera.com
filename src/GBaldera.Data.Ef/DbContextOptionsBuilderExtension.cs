@@ -15,12 +15,12 @@ namespace GBaldera.Data.Ef
             switch (defaultProvider)
             {
                 case "MySql":
-                    /*builder.UseMySql(connectionString, 
-                        options => options.MigrationsAssembly(migrationAssenbly));*/
+                    builder.UseMySql(connectionString, 
+                        options => options.MigrationsAssembly(migrationsAssembly));
                     break;
                 default:
                     builder.UseSqlite(connectionString, 
-                    options => options.MigrationsAssembly(migrationsAssembly));
+                        options => options.MigrationsAssembly(migrationsAssembly));
                     break;
             }
             return builder;
