@@ -10,7 +10,7 @@ namespace GBaldera.Data.Ef.Migrations.MySql.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Project",
+                name: "Projects",
                 columns: table => new
                 {
                     ProjectId = table.Column<int>(type: "int", nullable: false)
@@ -28,7 +28,7 @@ namespace GBaldera.Data.Ef.Migrations.MySql.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Project");
+                name: "Projects");
         }
     }
 }

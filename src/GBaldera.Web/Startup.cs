@@ -24,6 +24,7 @@ namespace GBaldera.Web
             services.AddDbContext<StorageContext>(options =>
                 options.UseProviderFromConfig(Configuration));
             services.AddScoped<IDatabaseMigrator, DatabaseMigrator>();
+            services.AddScoped<IDatabaseInitializer, DatabaseInitializer>();
             services.AddMvc();
 
             services.AddRecaptcha(new RecaptchaOptions
@@ -56,7 +57,7 @@ namespace GBaldera.Web
                     template: "{controller}/{action=Index}/{id?}");
             });
 
-            app.UpdateDatabase(); // apply migrations
+            app.UpdateDatabase(); // apply migrations and seed data
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.8
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GBaldera.Web", "src\GBaldera.Web\GBaldera.Web.csproj", "{90DB04A3-4A86-45B3-97B0-4F12F82BE471}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GBaldera.Data.Ef.Services", "src\GBaldera.Data.Ef.Services\GBaldera.Data.Ef.Services.csproj", "{9EC3FD25-31C4-40A4-B23D-9B5D2ABD75CD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GBaldera.Data.Ef.Migrations.Sqlite", "src\GBaldera.Data.Ef.Migrations.Sqlite\GBaldera.Data.Ef.Migrations.Sqlite.csproj", "{FA4515FE-6436-4A48-80D6-747EF974EC42}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GBaldera.Data.Ef.Migrations.MySql", "src\GBaldera.Data.Ef.Migrations.MySql\GBaldera.Data.Ef.Migrations.MySql.csproj", "{DA99F687-F344-4E78-BA4C-9C5E1CD04962}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{FA4515FE-6436-4A48-80D6-747EF974EC42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA4515FE-6436-4A48-80D6-747EF974EC42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA4515FE-6436-4A48-80D6-747EF974EC42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA99F687-F344-4E78-BA4C-9C5E1CD04962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA99F687-F344-4E78-BA4C-9C5E1CD04962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA99F687-F344-4E78-BA4C-9C5E1CD04962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA99F687-F344-4E78-BA4C-9C5E1CD04962}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

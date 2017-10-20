@@ -36,7 +36,7 @@ namespace GBaldera.Data.Ef.Migrations.MySql.Migrations
 
                     b.HasKey("ProjectId");
 
-                    b.ToTable("Project");
+                    b.ToTable("Projects");
                 });
 #pragma warning restore 612, 618
         }

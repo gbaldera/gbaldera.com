@@ -1,7 +1,5 @@
-﻿using System;
-using GBaldera.Data.Models;
+﻿using GBaldera.Data.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace GBaldera.Data.Ef
 {
@@ -11,7 +9,9 @@ namespace GBaldera.Data.Ef
             : base(options)
         {
         }
-        
+
+        public DbSet<Project> Projects { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Project>(entity =>
@@ -19,7 +19,8 @@ namespace GBaldera.Data.Ef
                 entity.Property(e => e.Name).HasMaxLength(50);
                 entity.Property(e => e.Description).HasMaxLength(256).IsRequired(false);
                 entity.Property(e => e.FileName).HasMaxLength(256);
-            });            
+                entity.ToTable("Projects");
+            });
         }
     }
 }

@@ -34,7 +34,7 @@ namespace GBaldera.Data.Ef.Migrations.Sqlite.Migrations
 
                     b.HasKey("ProjectId");
 
-                    b.ToTable("Project");
+                    b.ToTable("Projects");
                 });
 #pragma warning restore 612, 618
         }

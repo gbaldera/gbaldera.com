@@ -22,4 +22,7 @@
     <Content Remove="**/*.config" />
     <Content Update="appsettings*.json" CopyToPublishDirectory="Always" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\uploads\projects\" />
+  </ItemGroup>
 </Project>

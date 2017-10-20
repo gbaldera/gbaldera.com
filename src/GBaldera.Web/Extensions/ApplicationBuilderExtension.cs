@@ -11,21 +11,23 @@ namespace GBaldera.Web.Extensions
     {
         public static IApplicationBuilder UpdateDatabase(this IApplicationBuilder builder)
         {
-            MigrateDatabase(builder.ApplicationServices).GetAwaiter().GetResult();
+            MigrateAndSeedDatabase(builder.ApplicationServices).GetAwaiter().GetResult();
             return builder;
         }
 
-        private static async Task MigrateDatabase(IServiceProvider provider) 
+        private static async Task MigrateAndSeedDatabase(IServiceProvider provider) 
         {
             using (var scope = provider.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
                 var migrator = scope.ServiceProvider.GetRequiredService<IDatabaseMigrator>();
+                var initializer = scope.ServiceProvider.GetRequiredService<IDatabaseInitializer>();
                 var loggerFactory = scope.ServiceProvider.GetRequiredService<ILoggerFactory>();
                 var logger = loggerFactory.CreateLogger("ApplicationBuilderExtension");
 
                 try
                 {
                     await migrator.MigrateAsync();
+                    await initializer.SeedDataAsync();
                 }
                 catch (Exception exception)
                 {
